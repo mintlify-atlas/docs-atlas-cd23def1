@@ -1,0 +1,71 @@
+{
+  "projectType": "general",
+  "projectName": "Lcurve",
+  "projectDescription": "A MATLAB tool for computing the L-curve criterion in Tikhonov regularization, featuring analytic curvature computation and automatic knee detection.",
+  "theme": "palm",
+  "primaryColor": "#2563EB",
+  "lightColor": "#DBEAFE",
+  "darkColor": "#1E3A8A",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": ["introduction", "quickstart"]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/tikhonov-regularization",
+              "guides/lcurve-criterion",
+              "guides/knee-detection",
+              "guides/solver-methods"
+            ]
+          },
+          {
+            "group": "Examples",
+            "pages": [
+              "examples/basic-usage",
+              "examples/advanced-plotting",
+              "examples/interactive-exploration"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Function Reference",
+            "pages": [
+              "api/lcurve-function",
+              "api/parameters",
+              "api/return-values"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Analytic curvature computation of the log-L-curve (no finite differences)",
+    "Automatic knee region detection via iterative lambda search",
+    "Multiple linear solver methods: SVD, backslash, symmetrized backslash, inv, decomposition",
+    "Support for arbitrary regularization operators L (not just identity)",
+    "Matrix warm-up pre-computation for repeated evaluations",
+    "Returns osculating circle centers for curvature visualization",
+    "Compatible with general Tikhonov regularization problems: min |Ax-b|^2 + lambda*|Lx|^2"
+  ],
+  "publicApiSurface": [
+    "Lcurve(A) — warm-up / SVD pre-computation of matrix A",
+    "Lcurve(A, b, L, LAMBDAs) — evaluate L-curve coordinates and curvature for given lambdas",
+    "Lcurve(A, b, L, LAMBDAs, METHOD) — same with explicit solver method",
+    "Lcurve(A, b, L) — auto-detect optimal knee lambda",
+    "Lcurve(A, b, L, []) — auto-detect with default lambda exploration range",
+    "Lcurve(A, b, L, {initial_exploration}) — auto-detect with custom exploration range",
+    "[XYKCs, Ss] = Lcurve(...) — two-output form returning solutions and curvatures",
+    "METHOD options: 'svd', '\\', '\\/', 'inv', '\\eye', '/\\eye', 'decomposition'"
+  ]
+}
